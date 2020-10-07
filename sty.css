@@ -10,7 +10,11 @@
     visibility: visible;
     transform: scale(1);
 }
-
+.tabS div{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
 body{
     background: #f0f0f0;   
 }
@@ -60,7 +64,7 @@ body{
 
 
 
-#content div:after{
+#content .tabS:after{
     position: absolute;
     content: "";
     border-left: 10px solid transparent;

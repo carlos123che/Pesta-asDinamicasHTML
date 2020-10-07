@@ -1,5 +1,6 @@
 var numeros = [1];
 var areaSelect = ""
+var codeIdAnterior = ""
 window.onload = function(){
 
     $('#btn').addEventListener("click", function(){
@@ -24,9 +25,6 @@ window.onload = function(){
         nombre2 = "tab" + String((numeros[numeros.length - 1]));
         newDiv.setAttribute("class", "tab");
         newDiv.setAttribute("id", nombre2);
-        var texto = document.createElement("p");
-        texto.textContent = "texto prueba pela la verga";
-        newDiv.appendChild(texto);
         contenido.appendChild(newDiv);
 
     });
@@ -45,6 +43,7 @@ function $(selector){
 function test(){
    var seleccion =  $("input[class='radio']:checked").val();
    seleccion2 = seleccion.replace("radio", "");
+   codeId = "codeeditor" + seleccion2;
    seleccion2 = "tab" + seleccion2;
    seleccion = "#" + seleccion
    $(seleccion).prop("checked", false);
@@ -52,16 +51,33 @@ function test(){
    if(areaSelect==""){
         const div = document.getElementById(seleccion2);
         div.classList.remove('tab');
-        div.classList.add('tabS');
+
+        const textArea = document.createElement("div");
+        textArea.setAttribute("id", codeId);
+        div.appendChild(textArea);
+        var editor = CodeMirror(document.getElementById(codeId));
+
+        div.classList.add('tabS'); 
+
    }else{
        const divAnterior = document.getElementById(areaSelect);
        const divActual = document.getElementById(seleccion2);
+
        divAnterior.classList.remove('tabS');
        divAnterior.classList.add('tab');
+       divAnterior.removeChild(document.getElementById(codeIdAnterior));
 
-       divActual.classList.remove('tab');
+       const textArea = document.createElement("div");
+       textArea.setAttribute("id", codeId);
+       divActual.appendChild(textArea);
+       var editor = CodeMirror(document.getElementById(codeId));
+
+       divActual.classList.remove("tab");
        divActual.classList.add('tabS');
+
    }
    areaSelect = seleccion2;
+   codeIdAnterior  = codeId;
+
 
 }
