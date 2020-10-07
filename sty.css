@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+.tabS{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
 body{
     background: #f0f0f0;   
 }
@@ -36,7 +42,7 @@ body{
     position: relative;
 }
 
-#content div{
+.tab{
     position: absolute;
     line-height: 1.8;
     transition: all 600ms ease;
@@ -48,3 +54,47 @@ body{
     padding-bottom: 40px;
 }
 
+.radio{
+    display: none;
+}
+
+
+
+#content div:after{
+    position: absolute;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-top: 10px solid transparent;
+    bottom: 100%;
+    left: 28px;
+}
+
+#content #tab2:after{
+    left: 122px;
+}
+#content #tab3:after{
+    left: 210px;
+}
+#content #tab4:after{
+    left: 303px;
+}
+#content #tab5:after{
+    left: 395px;
+}
+#content #tab6:after{
+    left: 487px;
+}
+#content #tab7:after{
+    left: 579px;
+}
+#content #tab8:after{
+    left: 671px;
+}
+#content #tab9:after{
+    left: 763px;
+}
+#content #tab10:after{
+    left: 855px;
+}

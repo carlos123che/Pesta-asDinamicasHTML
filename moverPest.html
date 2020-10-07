@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="sty.css">
     <script src="dinamico.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    
 </head>
 <body>
     <button id="btn">Boton</button>
@@ -16,18 +18,8 @@
         </div>
         
         <div id="content">
-            <script>
-                function test(){
-                numeros.forEach(numero => {
-                var seleccion = "#radio" + String(numero);
-                $(seleccion).click(function(){
-                alert(seleccion);
-                });
-             });
-            }
-            </script>
-            <input type="radio" class="radio" id="radio1" onC   lick="test();">
-            <div class="tab1">
+            <input type="radio" class="radio" id="radio1"  value = "radio1" onClick="test();">
+            <div class="tab" id="tab1" >
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nisi quam! Atque ratione quas excepturi!</p>
             </div>
         </div>
