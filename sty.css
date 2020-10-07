@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #f0f0f0;   
+}
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#lbl{
+    background: #234;
+}
+
+#lbl label{
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+#lbl label:hover{
+    background: #28435d;
+}
+
+#content{
+    position: relative;
+}
+
+#content div{
+    position: absolute;
+    line-height: 1.8;
+    transition: all 600ms ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    padding: 30px;
+    background: white;
+    padding-bottom: 40px;
+}
+
