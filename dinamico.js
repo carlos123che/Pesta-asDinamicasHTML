@@ -52,10 +52,9 @@ function test(){
         const div = document.getElementById(seleccion2);
         div.classList.remove('tab');
 
-        const textArea = document.createElement("div");
+        const textArea = document.createElement("textarea");
         textArea.setAttribute("id", codeId);
         div.appendChild(textArea);
-        var editor = CodeMirror(document.getElementById(codeId));
 
         div.classList.add('tabS'); 
 
@@ -65,19 +64,31 @@ function test(){
 
        divAnterior.classList.remove('tabS');
        divAnterior.classList.add('tab');
-       divAnterior.removeChild(document.getElementById(codeIdAnterior));
 
-       const textArea = document.createElement("div");
-       textArea.setAttribute("id", codeId);
-       divActual.appendChild(textArea);
-       var editor = CodeMirror(document.getElementById(codeId));
-
+       if (divActual.children.length==0){
+        const textArea = document.createElement("textarea");
+        textArea.setAttribute("id", codeId);
+        divActual.appendChild(textArea);
+        
+       }
+       
        divActual.classList.remove("tab");
        divActual.classList.add('tabS');
 
    }
    areaSelect = seleccion2;
    codeIdAnterior  = codeId;
+}
 
+function setText(){
+    var area = document.getElementById(codeIdAnterior);
+    area.value = "public class Test(par){ system.out.print('ptm') } //jajajaja "
+}
 
+function paint(){
+    var area = document.getElementById(codeIdAnterior);
+    var editor = CodeMirror.fromTextArea(area, {
+        lineNumbers: true,
+        theme: "dracula"
+    });
 }

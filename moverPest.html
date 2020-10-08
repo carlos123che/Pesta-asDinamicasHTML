@@ -8,11 +8,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="theme/dracula.css">
     <script src="mode/javascript/javascript.js"></script>
+    
     
 </head>
 <body>
     <button id="btn">Boton</button>
+    <button onclick="setText();">SetText</button>
+    <button onclick="paint();">paint</button>
     <div class="container">
         <div id="lbl">
             <label for="radio1">Page 1</label>
@@ -22,9 +26,6 @@
             <input type="radio" class="radio" id="radio1"  value = "radio1" onClick="test();">
             <div class="tab" id="tab1" ></div>
         </div>
-        <script>
-            var editor = CodeMirror(document.getElementById("codeeditor"));
-        </script>
     </div>
 </body>
 </html>
