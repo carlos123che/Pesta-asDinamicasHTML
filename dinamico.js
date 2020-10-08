@@ -87,8 +87,12 @@ function setText(){
 
 function paint(){
     var area = document.getElementById(codeIdAnterior);
-    var editor = CodeMirror.fromTextArea(area,{
-        theme: "dracula",
-        lineNumbers: true
-    });
+    var area2 = document.getElementById(areaSelect);
+    if(area2.children.length == 1){
+        var editor = CodeMirror.fromTextArea(area,{
+            theme: "dracula",
+            lineNumbers: true,
+            extraKeys: {"Ctrl-Space": "autocomplete"}
+        });
+    }
 }
