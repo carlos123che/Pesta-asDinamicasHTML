@@ -87,8 +87,8 @@ function setText(){
 
 function paint(){
     var area = document.getElementById(codeIdAnterior);
-    var editor = CodeMirror.fromTextArea(area, {
-        lineNumbers: true,
-        theme: "dracula"
+    var editor = CodeMirror.fromTextArea(area,{
+        theme: "dracula",
+        lineNumbers: true
     });
 }
